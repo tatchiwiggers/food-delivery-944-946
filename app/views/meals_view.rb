@@ -10,4 +10,10 @@ class MealsView
     print "> "
     return gets.chomp
   end
+
+  def ask_index
+    puts "enter index:"
+    puts " "
+    gets.chomp.to_i - 1
+  end
 end
