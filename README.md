@@ -1,15 +1,7 @@
-### Food Delivery challenge solution
+The goal is to take the code from yesterday’s livecode, lewagon/food-delivery@livecode-day-one and implement the “Sign in” feature.
 
-Each branch of the repository represents a snapshot of the codebase during the two-day progression.
+1. First you’ll need to implement the Employee model 
+2. Then implement the EmployeeRepository
+3. Then add a SessionsController to implement the sign_in
+4. Update the router to display a different menu based on the signed in guy
 
-In the current `livecode-day-one` branch, the implemented user actions are:
-
-- [ ] As an employee, I can log in
-- [X] As a manager, I can add a new meal
-- [X] As a manager, I can list all the meals
-- [X] As a manager, I can add a new customer
-- [X] As a manager, I can list all the customers
-- [ ] As a manager, I can add a new order
-- [ ] As a manager, I can list all the undelivered orders
-- [ ] As a rider, I can mark one of my orders as delivered
-- [ ] As a rider, I list all my undelivered orders

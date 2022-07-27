@@ -1,22 +1,34 @@
 class Router
-  def initialize(meals_controller, customers_controller)
+  def initialize(meals_controller, customers_controller, sessions_controller)
     @meals_controller = meals_controller
     @customers_controller = customers_controller
+    @sessions_controller = sessions_controller
     @running = true
   end
 
   def run
+
+    @employee = @sessions_controller.sign_in
+    puts @employee.username
+
+
     while @running
-      print_menu
-      choice = gets.chomp.to_i
-      print `clear`
-      route_action(choice)
+      if @employee.manager?
+        print_actions_manager
+        choice = gets.chomp.to_i
+        # print `clear`
+        route_manager(choice)
+      else
+      #   print_actions_rider
+      #   choice = gets.chomp.to_i
+      #   route_rider(choice)
+      puts 'no other options'
+      end
     end
   end
 
   private
-
-  def print_menu
+  def print_actions_manager
     puts "--------------------"
     puts "------- MENU -------"
     puts "--------------------"
@@ -28,7 +40,7 @@ class Router
     print "> "
   end
 
-  def route_action(choice)
+  def route_manager(choice)
     case choice
     when 1 then @meals_controller.add
     when 2 then @meals_controller.list
